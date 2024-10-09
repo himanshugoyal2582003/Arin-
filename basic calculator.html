@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+<style>
+    body {
+        background-color: rgb(12, 11, 11);
+    }
+    .btn:hover{background-color: rgb(44, 44, 44);
+    color: rgb(222, 131, 98);}
+
+    .body {
+        height: 31.5em;
+        width: 20em;
+        background-color: rgb(0, 0, 0);
+        border: 2px solid rgb(215, 85, 37);
+        border-radius: 2em;
+        
+    }
+
+    .enterbox {
+        padding: 1.5rem; 
+    }
+
+    .table {
+        background-color: black;
+        height: 5em;
+        width: 14em;
+        text-align: right;
+        font-size: larger;
+        border: 0;
+        color: white;
+        pointer-events: none;
+    }
+
+    .but {
+        padding-left: 1.5em;
+        padding-bottom: 1em;
+    }
+
+    .btn {
+        height: 4em;
+        width: 4em;
+        border-radius: 5cm;
+        margin-right: 1.3em;
+        border: 0 solid black;
+        background-color: black;color: white;
+    }
+    .special{background-color: black;color: rgb(249, 88, 30) ;}
+
+    .equal{background-color: rgb(249, 88, 30);
+        height: 4em;
+        width: 4em;
+        border-radius: 5cm;
+        margin-right: 1.3em;
+        border: 0 solid black;
+        color: white;}
+        .full{display: flex;align-self: center;justify-content: center;align-self: center;
+        text-align: center; justify-self: center;
+        padding-top: 7em; }
+        .line{background-color: rgb(68, 68, 67);height: 0.1em;margin: 0.5em;}
+</style>
+
+<body>
+
+   <div class="full">
+    <div class="body">
+        <div class="enterbox">
+            <input class="table" type="text">
+        </div>
+        <div class="line"></div>
+        <div class="but">
+            <button class="btn special forget" >AC</button>
+            <button class="btn special del" >del</button>
+            <button class="btn special percentage" >%</button>
+            <button class="btn special divide" >÷</button>
+        </div>
+
+        <div class="but">
+            <button class="btn btn7">7</button>
+            <button class="btn btn8">8</button>
+            <button class="btn btn9">9</button>
+            <button class="btn special multiple">*</button>
+        </div>
+
+        <div class="but">
+            <button class="btn btn4">4</button>
+            <button class="btn btn5">5</button>
+            <button class="btn btn6">6</button>
+            <button class="btn special sub">-</button>
+        </div>
+
+        <div class="but">
+            <button class="btn btn1">1</button>
+            <button class="btn btn2">2</button>
+            <button class="btn btn3">3</button>
+            <button class="btn special add">+</button>
+        </div>
+
+        <div class="but">
+           <a href="advance calculator.html"><button class="btn special">advance</button></a> 
+            <button class="btn btn0">0</button>
+            <button class="btn  dot">.</button>
+            <button class=" equal">=</button>
+        </div>
+    </div>
+
+</div> 
+
+
+<audio src="click-234708.mp3"></audio>
+
+<script>
+      
+      
+      const enter = document.querySelector('.table');
+
+
+      const button1 = document.querySelector('.btn1');
+      const button2 = document.querySelector('.btn2');
+      const button3 = document.querySelector('.btn3');
+      const button4 = document.querySelector('.btn4');
+      const button5 = document.querySelector('.btn5');
+      const button6 = document.querySelector('.btn6');
+      const button7 = document.querySelector('.btn7');
+      const button8 = document.querySelector('.btn8');
+      const button9 = document.querySelector('.btn9');
+      const button0 = document.querySelector('.btn0');
+      const percentage = document.querySelector('.percentage');
+      const divide = document.querySelector('.divide');
+      const multiple = document.querySelector('.multiple');
+      const sum = document.querySelector('.add');
+      const sub = document.querySelector('.sub');
+      const equal = document.querySelector('.equal');
+      const ac = document.querySelector('.forget');
+      const dot = document.querySelector('.dot');
+      const del = document.querySelector('.del');
+     
+    ac.addEventListener('click',e=>{
+        enter.value = "" ; audio.play()
+    })
+    equal.addEventListener('click',e=>{
+        enter.value = eval(enter.value) ; audio.play()
+    })
+
+    button1.addEventListener('click',e=>{
+        enter.value += 1 ; audio.play()
+    })
+    button2.addEventListener('click',e=>{
+        enter.value += 2 ; audio.play()
+    })
+    button3.addEventListener('click',e=>{
+        enter.value += 3 ; audio.play()
+    })
+    button4.addEventListener('click',e=>{
+        enter.value += 4 ; audio.play()
+    })
+    button5.addEventListener('click',e=>{
+        enter.value += 5 ; audio.play()
+    })
+    button6.addEventListener('click',e=>{
+        enter.value += 6 ; audio.play()
+    })
+
+    button7.addEventListener('click',e=>{
+        enter.value += 7 ; audio.play()
+    })
+    button8.addEventListener('click',e=>{
+        enter.value += 8 ; audio.play()
+    })
+    button9.addEventListener('click',e=>{
+        enter.value += 9 ; audio.play()
+    })
+    button0.addEventListener('click',e=>{
+        enter.value += 0 ;audio.play() 
+    })
+    dot.addEventListener('click',e=>{
+        enter.value += '.' ; audio.play()
+    })
+    percentage.addEventListener('click',e=>{
+        enter.value += '*0.01' ; audio.play()
+    })
+    sum.addEventListener('click',e=>{
+        enter.value += '+' ; audio.play()
+    })
+
+    sub.addEventListener('click',e=>{
+        enter.value += '-' ; audio.play()
+    })
+    multiple.addEventListener('click',e=>{
+        enter.value += '*' ; audio.play()
+    })
+    divide.addEventListener('click',e=>{
+        enter.value += '/' ; audio.play()
+    })
+    del.addEventListener('click',e=>{
+        enter.value = enter.value.slice(0,-1);audio.play()
+    })
+    const audio = document.querySelector('audio')
+
+</script>
+</body>
+
+</html>
